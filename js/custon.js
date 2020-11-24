@@ -6,7 +6,7 @@ window.onload = function() {
     if(document.hidden) {
       $('[rel="icon"]').attr('href', "/favicion.ico");
       $('[rel="shortcut icon"]').attr('href', "/fail.ico");
-      document.title = '喔唷，崩溃啦！';
+      document.title = '糟糕，崩溃啦！';
       clearTimeout(titleTime);
     } else {
       $('[rel="icon"]').attr('href', "/fail.ico");
