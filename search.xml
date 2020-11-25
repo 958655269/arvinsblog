@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>微信提现免手续费</title>
+      <link href="2020/11/25/%E5%BE%AE%E4%BF%A1%E6%8F%90%E7%8E%B0%E5%85%8D%E6%89%8B%E7%BB%AD%E8%B4%B9/"/>
+      <url>2020/11/25/%E5%BE%AE%E4%BF%A1%E6%8F%90%E7%8E%B0%E5%85%8D%E6%89%8B%E7%BB%AD%E8%B4%B9/</url>
+      
+        <content type="html"><![CDATA[<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>参与方法：在微信小程序中搜索“微信支付有优惠”小程序，打开后可以领取金币，平时使用微信支付一次可得一个金币，也可通过完成任务领取一定的金币，一个金币可以兑换100元免费提现额度或者兑换微信支付立减等优惠，非常实用。（注意：金币需要自行在小程序中领取）。</p><p><img src="https://p6.itc.cn/images03/20201125/83c2ecd807b445088b7e08bab886bb3a.png"></p><p><img src="https://p1.itc.cn/images03/20201125/a6e92c59f85b456aade7fd49c7e2fc15.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络技巧 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 微信提现免手续费技巧 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>零基础搭建个人博客</title>
+      <link href="2020/11/24/%E9%9B%B6%E5%9F%BA%E7%A1%80%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
+      <url>2020/11/24/%E9%9B%B6%E5%9F%BA%E7%A1%80%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
+      
+        <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在经过几天努力下，我的Blog也算是搭建完了，在此给需要的人出个教程</p><p>简单说一下这个Blog的优点：</p><ul><li>无需购买服务器</li><li>无需购买域名</li><li>方便快捷</li></ul><h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><ul><li><p>一个码云账号，<a href="https://gitee.com/">前往注册</a></p></li><li><p>node.js工具，<a href="https://nodejs.org/en/">前往下载</a></p></li><li><p>Git工具，<a href="https://git-scm.com/">前往下载</a></p></li></ul><h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><ul><li><p>对于完全不会使用的新手，输入完一个命令记得按一下回车键</p></li><li><p>同时按下Win键和R键（或者点击“开始菜单”-&gt;点击“运行”）,打开运行窗口,输入“cmd”，然后输入以下命令，结果与下图相同则说明安装正确，若不正确可以卸载软件重新安装，依次输入如下两条命令然后回车，如图显示版本号，即表示安装成功。</p></li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm -v</span><br></pre></td></tr></table></figure><p><img src="https://p5.itc.cn/images03/20201125/927a205bc0e046178d8a329c963cf702.png"></p><ul><li>估计大家都有被“墙”挡在外面的经历，安装hexo为了避免出现类似情况，我使用<a href="http://npm.taobao.org/">淘宝NPM镜像</a>,输入以下命令等待安装完成</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org</span><br></pre></td></tr></table></figure><p><img src="https://p4.itc.cn/images03/20201125/37210d46910d4fdc953b91868b3c57d0.png"></p><ul><li>安装完成再输入如下命令查看，显示版本号即代表安装成功</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm -v</span><br></pre></td></tr></table></figure><p><img src="https://p7.itc.cn/images03/20201125/a6d114f0532f46609ed6d0c2d96e69c8.png"></p><ul><li>接下来使用下面的命令安装hexo框架</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install -g hexo-cli</span><br></pre></td></tr></table></figure><ul><li>等待hexo安装完成后使用下面命令查看是否安装成功，如下图显示即为安装完成</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure><p><img src="https://p4.itc.cn/images03/20201125/ef943ce7f6c24638a68af101e67f527d.png"></p><ul><li>接下来在电脑上新建一个blog文件夹,该文件夹用于存放你的博客文件,然后右键单击选择“Git Bash”</li></ul><p><img src="https://p4.itc.cn/images03/20201125/d4e9617f3539477eb963c49bf566b55a.png"></p><ul><li>使用下面的命令初始化hexo，将项目文件克隆到本地</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure><p><img src="https://p2.itc.cn/images03/20201125/f87bc8db03414b268b89cb1860cbf1f4.png"></p><ul><li>等待克隆完成后，会发现我们刚才创建的blog文件夹里面产生了以下文件</li></ul><p><img src="https://p4.itc.cn/images03/20201125/171cb7d547b841aaa99d893c8242e221.png"></p><ul><li>用下面这个命令，启动本地预览</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure><p><img src="https://p3.itc.cn/images03/20201125/e017699a7a184a2792594cb695d568c6.png"></p><p><img src="https://p8.itc.cn/images03/20201125/45cd375ea1484325b9689ee8be32972d.png"></p><p>浏览器访问地址<a href="http://localhost:4000/%E5%8D%B3%E5%8F%AF%E7%9C%8B%E5%88%B0%E4%B8%80%E4%B8%AA%E5%88%9D%E5%A7%8B%E5%8C%96%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%8C%E6%9A%82%E5%81%9C%E6%9C%AC%E5%9C%B0%E8%AE%BF%E9%97%AE%E6%8C%89Ctrl+C">http://localhost:4000/即可看到一个初始化的博客，暂停本地访问按Ctrl+C</a></p><p><img src="https://p8.itc.cn/images03/20201125/fdd12184f712404db49ced06c923c0fe.png"></p><h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><ul><li>接下来我们将博客部署到码云上面去，这样别人才能访问</li><li>登录码云，新建公开仓库，路径如图填写，与归属名一致，必须严格按照此格式，不然会影响访问，其它选项默认即可</li></ul><p><img src="https://p6.itc.cn/images03/20201125/2f79f3c0f43147fa88fce191c88c702f.png"></p><p><img src="https://p9.itc.cn/images03/20201125/14d705f5f34147539b9cf8b489145c92.png"></p><ul><li>接下来在git命令工具输入如下命令，安装一个Git部署插件，等待安装完成后会如下图显示的一个文件夹</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure><p><img src="https://p5.itc.cn/images03/20201125/7dc1f3fca65346d48643bdba3be9f622.png"></p><ul><li>然后我们打开博客根目录下的_config.yml这个文件，到文件最底部，找图片内容进行编辑</li></ul><p><img src="https://p7.itc.cn/images03/20201125/f50ee6ef02274e638af49d25cf1349e1.png"></p><p><img src="https://p1.itc.cn/images03/20201125/cf4690e5f08e40aaa0eb6416f2a9358e.png"></p><p><img src="https://p6.itc.cn/images03/20201125/7309eb67a63e4c5c85749377ab261326.png"></p><ul><li>用如下命令将本地博客推向Gitee仓库</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure><p>或者</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure><p><img src="https://p7.itc.cn/images03/20201125/3be6b2fa7de34f018e479df595fc78f9.png"></p><ul><li>等待推送完成之后，我们在仓库开启Gitee Pages服务，要注意的是，以后我们更新博客，每一次推送到远端仓库后都要手动更新一下Gitee Pages页面</li></ul><p><img src="https://p8.itc.cn/images03/20201125/9a7106d1a1f7477eae004be60302a32d.png"></p><p><img src="https://p6.itc.cn/images03/20201125/c7899c48d7a64e5d98dee0ca6a37932f.png"></p><p>到这里，我们的博客就已经部署成功了，Gitee Pages页面提供的网址就是我们的站点地址</p><h2 id="博客文章发布流程"><a href="#博客文章发布流程" class="headerlink" title="博客文章发布流程"></a>博客文章发布流程</h2><ul><li>在博客根目录下/source/_posts路径下，存放的是我们的博客文章，都是Markdown格式的</li><li>写好文章后前往博客根目录blog文件夹下，鼠标右键打开Git Bash进行以下操作</li></ul><p>在本地更新(包括平时文件的修改，内容的添加)博客后，用下面这个命令清除根目录下的文件public</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure><p>再用下面这个命令在博客根目录下文件生成新的文件public</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure><p>再用下面这个命令进行本地预览</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure><p>确认无误后，用下面这个命令推向远端仓库</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure><p>​            或者</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure><p>最后去上文提到的Gitee Pages更新一下就完成博客的发布以及内容的更新了</p><h2 id="关于博客主题"><a href="#关于博客主题" class="headerlink" title="关于博客主题"></a>关于博客主题</h2><p>博客的默认主题一般都是很丑的，所以难免我们要更换主题</p><p>Hexo博客的主题是放在根目录的/themes目录下的</p><p>你可以去网上下载自己喜欢的主题，然后打开根目录下的_config.yml文件，修改theme这一项为主题的名称即可</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 博客搭建 - 零基础搭建博客 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>建站感言</title>
       <link href="2020/11/22/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/"/>
       <url>2020/11/22/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</url>
