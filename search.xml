@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>c：foreach与th：each</title>
+      <link href="2021/12/02/c%EF%BC%9Aforeach%E4%B8%8Eth%EF%BC%9Aeach/"/>
+      <url>2021/12/02/c%EF%BC%9Aforeach%E4%B8%8Eth%EF%BC%9Aeach/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Thymeleaf中th-each的用法"><a href="#Thymeleaf中th-each的用法" class="headerlink" title="Thymeleaf中th:each的用法"></a>Thymeleaf中<a href="th:each">th:each</a>的用法</h1><p>在后端数据库在前端用表格展示时，为了更清楚地知道当前有多少条数据，需要在每一行前方都加上自增的序号。<br>th:each循环迭代语法：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">th:each&#x3D;&quot;obj,itemStat:$&#123;objList&#125;</span><br></pre></td></tr></table></figure><p>itemStat称作状态变量，属性有：<br>index:当前迭代对象的index（从0开始计算）<br>count: 当前迭代对象的index(从1开始计算)<br>size:被迭代对象的大小<br>current:当前迭代变量<br>even/odd:布尔值，当前循环是否是偶数/奇数（从0开始计算）<br>first:布尔值，当前循环是否是第一个<br>last:布尔值，当前循环是否是最后一个</p><p>具体使用：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--自增序号--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">tr</span> <span class="attr">th:each</span>=<span class="string">&quot;students,studentsStart:$&#123;pageInfo.list&#125;&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--1.默认自增当前页条数的序号--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">td</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;studentsStart.count&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--2.自增当前页条数,点击下一页继续自增--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;pageInfo.startRow + studentsStart.count -1&#125;&quot;</span>&gt;</span>序号<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br></pre></td></tr></table></figure><p>效果:</p><p><img src="https://cdn.jsdelivr.net/gh/arvinsblog/cdn@master/img/202112021047054.png" alt="自增当前页条数,点击下一页继续自增"></p><h1 id="JSTL中-lt-c-foreach-gt-的用法"><a href="#JSTL中-lt-c-foreach-gt-的用法" class="headerlink" title="JSTL中&lt;c:foreach&gt;的用法"></a>JSTL中&lt;c:foreach&gt;的用法</h1><p><strong>c:forEach varStatus 属性</strong></p><ul><li><p><strong>current</strong>: 当前这次迭代的（集合中的）项</p></li><li><p><strong>index</strong>: 当前这次迭代从 0 开始的迭代索引</p></li><li><p><strong>count</strong>: 当前这次迭代从 1 开始的迭代计数</p></li><li><p><strong>first</strong>: 用来表明当前这轮迭代是否为第一次迭代的标志</p></li><li><p><strong>last</strong>: 用来表明当前这轮迭代是否为最后一次迭代的标志</p></li><li><p><strong>begin</strong>: 属性值</p></li><li><p><strong>end</strong>: 属性值</p></li><li><p><strong>step</strong>: 属性值</p></li><li><p>例如：</p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;c:forEach  items=<span class="string">&quot;$&#123;sessionScope.userList&#125;&quot;</span>  <span class="keyword">var</span>=<span class="string">&quot;userItem&quot;</span>  begin=<span class="string">&quot;1&quot;</span>  end=<span class="string">&quot;10&quot;</span>  step=<span class="string">&quot;3&quot;</span>  varStatus=<span class="string">&quot;userStatus&quot;</span>&gt; XXX </span><br><span class="line">&lt;/c:foreach&gt;</span><br></pre></td></tr></table></figure></li></ul><p><strong>实例解读：</strong> 对 session 对象存储的 userList 集合对象进行遍历，每次访问的项暂时存储在 userItem 变量中，从索引 1 开始至索引 10 进行访问，但不是依次访问，每隔 3 个元素访问一次。每次访问项的状态相关值由 userStatus 对象暂存。</p><p>&lt;c:foreach&gt; 的 varStatus 属性暂存项的相关状态属性，可由 EL 表达式引用。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$&#123;userStatus.index&#125; 此项的索引，从0开始 </span><br><span class="line">$&#123;userStatus.count&#125; 此项的计数序号，从1开始 </span><br><span class="line">$&#123;userStatus.first&#125; 此项是否是第一项，布尔值 </span><br><span class="line">$&#123;userStatus.last&#125; 此项是否是最后一项，布尔值 </span><br><span class="line">$&#123;userStatus.begin&#125; 此次迭代的起始索引，对应&lt;c:foreach&gt;中begin属性值 </span><br><span class="line">$&#123;userStatus.end&#125; 此次迭代的终止索引，对应&lt;c:foreach&gt;中end属性值 </span><br><span class="line">$&#123;userStatus.step&#125; 此次迭代的跳跃步伐，对应&lt;c:foreach&gt;中step属性值  </span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习日志 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> thymeleaf - jstl </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>springboot整合七牛云存储实现图片上传</title>
       <link href="2021/10/26/springboot%E9%85%8D%E7%BD%AE%E4%B8%83%E7%89%9B%E4%BA%91%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0/"/>
       <url>2021/10/26/springboot%E9%85%8D%E7%BD%AE%E4%B8%83%E7%89%9B%E4%BA%91%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0/</url>
@@ -88,7 +113,7 @@
       
       <categories>
           
-          <category> 网络技巧 </category>
+          <category> 学习日志 </category>
           
       </categories>
       
